@@ -1,12 +1,17 @@
 
+import React, {Component} from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div>
-      APP URA
-    </div>
-  );
-}
 
-export default App;
+
+export default class App extends Component  {
+
+  render() {
+    return (
+      <div>
+        App URA!
+      </div>
+    );
+  }
+}
