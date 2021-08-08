@@ -4,10 +4,11 @@ import { useMqttState } from 'mqtt-react-hooks';
 import './BasicControl.css'
 
 export default function BasicControl() {
-  const { mqtt } = useMqttState();
+  const { client } = useMqttState();
 
   function handleClick(message) {
-    return mqtt.publish('URA01/input', message);
+    console.log("Click: "+message); 
+    return client.publish('URA01/input', message);
   }
 
   return (
