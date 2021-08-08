@@ -12,7 +12,7 @@ import URAMQTTControl from './URAMQTTControl';
 export default class App extends Component  {
   constructor(props){
     super(props);
-    this.state = {mqttURAInput: 'URA01/input'}
+    this.state = {mqttURAInput: 'URA03/input'}
   }
 
   render() {
@@ -20,7 +20,7 @@ export default class App extends Component  {
  
       <div>
         <URAHeader title="Controle URA MQTT" />
-        <URAMQTTControl topic='URA02/input' />
+        <URAMQTTControl topic={this.state.mqttURAInput} />
  
       </div>
  
