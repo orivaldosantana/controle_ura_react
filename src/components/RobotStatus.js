@@ -5,7 +5,7 @@ import { useSubscription, useMqttState } from 'mqtt-react-hooks';
 
 export default function RobotStatus() {
 
-  const { message } = useSubscription(['URA/test']);
+  const { message } = useSubscription(['URA/output']);
   const { connectionStatus } = useMqttState();
 
   return (

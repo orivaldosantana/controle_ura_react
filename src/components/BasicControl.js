@@ -3,12 +3,16 @@ import { useMqttState } from 'mqtt-react-hooks';
 
 import './BasicControl.css'
 
-export default function BasicControl() {
+export default function BasicControl(props) {
+
+    
   const { client } = useMqttState();
+  console.log("Robot Control: "+props.topic) 
+  const uraTopic = props.topic; 
 
   function handleClick(message) {
-    console.log("Click: "+message); 
-    return client.publish('URA01/input', message);
+    console.log("Click: "+message +" on "+ uraTopic); 
+    return client.publish(uraTopic, message);
   }
 
   return (

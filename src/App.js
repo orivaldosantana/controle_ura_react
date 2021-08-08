@@ -20,7 +20,7 @@ export default class App extends Component  {
  
       <div>
         <URAHeader title="Controle URA MQTT" />
-        <URAMQTTControl />
+        <URAMQTTControl topic='URA02/input' />
  
       </div>
  
