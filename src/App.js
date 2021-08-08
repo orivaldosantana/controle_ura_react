@@ -1,11 +1,12 @@
 
 import React, {Component} from 'react';
 
- 
-import URAHeader from './components/URAHeader'
-
 import './App.css';
+import ConfForm from './components/ConfForm';
+
+import URAHeader from './components/URAHeader'
 import URAMQTTControl from './URAMQTTControl';
+
 
 
 
@@ -20,7 +21,8 @@ export default class App extends Component  {
  
       <div>
         <URAHeader title="Controle URA MQTT" />
-        <URAMQTTControl topic={this.state.mqttURAInput} />
+        
+        <ConfForm />
  
       </div>
  
