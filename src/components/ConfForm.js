@@ -6,20 +6,21 @@ export default class ConfForm extends Component {
     constructor(props){
         super(props); 
 
-        this.state = {topic: ''}
+        this.state = {topic: props.defaultTopic}
 
         this.handleSubmit = this.handleSubmit.bind(this); 
         this.handleChangeTopic = this.handleChangeTopic.bind(this); 
     }
 
     handleChangeTopic(event){
-        console.log(event.target.value)
         this.setState({topic: event.target.value}); 
     }
 
     handleSubmit(event){
         // Obtem o valor do tópico e atualiza a tela 
         console.log("Tópico: "+ this.state.topic); 
+        this.props.onTopicChange(this.state.topic);
+        event.preventDefault(); 
     }
 
     render() {
