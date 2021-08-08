@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+import './ConfForm.css' 
 
 export default class ConfForm extends Component {
 
@@ -26,9 +27,9 @@ export default class ConfForm extends Component {
     render() {
 
         return ( 
-            <form onSubmit={this.handleSubmit} >
+            <form className="Form" onSubmit={this.handleSubmit} >
                 <div className="TextIn">
-                    <label>Tópico MQTT: </label> 
+                    <strong>Tópico MQTT: </strong> 
                     <input type="text" value={this.state.topic} onChange={this.handleChangeTopic} id="topic" />
                 </div>
                 <div className="BtnSubmit" >
