@@ -7,20 +7,25 @@ export default class ConfForm extends Component {
     constructor(props){
         super(props); 
 
-        this.state = {topic: props.defaultTopic}
+        this.state = {topicToSend: props.inputTopic, topicToReceive: props.outputTopic}
 
         this.handleSubmit = this.handleSubmit.bind(this); 
-        this.handleChangeTopic = this.handleChangeTopic.bind(this); 
+        this.handleChangeTopicToSend = this.handleChangeTopicToSend.bind(this); 
+        this.handleChangeTopicToReceive = this.handleChangeTopicToReceive.bind(this); 
     }
 
-    handleChangeTopic(event){
-        this.setState({topic: event.target.value}); 
+    handleChangeTopicToSend(event){
+        this.setState({topicToSend: event.target.value}); 
+    }
+
+    handleChangeTopicToReceive(event){
+        this.setState({topicToReceive: event.target.value}); 
     }
 
     handleSubmit(event){
         // Obtem o valor do tópico e atualiza a tela 
-        console.log("Tópico: "+ this.state.topic); 
-        this.props.onTopicChange(this.state.topic);
+        console.log("Tópico: "+ this.state.topicToSend); 
+        this.props.onTopicChange(this.state.topicToSend);
         event.preventDefault(); 
     }
 
@@ -29,8 +34,12 @@ export default class ConfForm extends Component {
         return ( 
             <form className="Form" onSubmit={this.handleSubmit} >
                 <div className="TextIn">
-                    <strong>Tópico MQTT: </strong> 
-                    <input type="text" value={this.state.topic} onChange={this.handleChangeTopic} id="topic" />
+                    <strong>Tópico para enviar: </strong> 
+                    <input type="text" value={this.state.topicToSend} onChange={this.handleChangeTopicToSend} id="topic_to_send" />
+                </div>
+                <div className="TextIn">
+                    <strong>Tópico para receber: </strong> 
+                    <input type="text" value={this.state.topicToReceive} onChange={this.handleChangeTopicToReceive} id="topic_to_receive" />
                 </div>
                 <div className="BtnSubmit" >
                     <input type="submit" value="Ok" />
