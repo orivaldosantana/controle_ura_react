@@ -2,6 +2,7 @@ import React from 'react';
 import './RobotStatus.css'
 
 import { useSubscription, useMqttState } from 'mqtt-react-hooks';
+import MessageMQTT from './MessageMQTT';
 
 export default function RobotStatus() {
 
@@ -15,7 +16,7 @@ export default function RobotStatus() {
       </div>
       <div className="Content" >
         <p> <strong>Topic: </strong> {message && message.topic} </p>
-        <p> <strong>Message: </strong> {message && message.message}  </p>
+        <MessageMQTT msg={message && message.topic} />
         <p> <strong>Conection: </strong> {connectionStatus} </p>
       </div>
     </div>
