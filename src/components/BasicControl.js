@@ -17,18 +17,18 @@ export default function BasicControl(props) {
 
     return (
         <div className="controls">
-            <button type="button" onClick={() => handleClick('f')}>
+            <button type="button" onClick={() => handleClick('FRT')}>
                 Frente
             </button>
             <div>
-                <button type="button" onClick={() => handleClick('e')}>
+                <button type="button" onClick={() => handleClick('ESQ')}>
                     Esquerda
                 </button>
-                <button type="button" onClick={() => handleClick('d')}>
+                <button type="button" onClick={() => handleClick('DIR')}>
                     Direita
                 </button>
             </div>
-            <button type="button" onClick={() => handleClick('t')}>
+            <button type="button" onClick={() => handleClick('TRS')}>
                 Trás
             </button>
 
